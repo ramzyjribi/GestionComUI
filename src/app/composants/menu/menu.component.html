@@ -1,0 +1,19 @@
+<div class="flex-shrink-0 p-3">
+  <ul class="list-unstyled ps-0">
+    <li class="border-top my-3"></li>
+    @for (menu of menuProperties ; track $index) {
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" [attr.data-bs-target] = " '#'+ menu.id +'-collapse'" aria-expanded="false">
+          <i [ngClass]="[menu.icon,'pe-2']"></i>{{menu.titre}}
+        </button>
+        <div class="collapse" [id] = "menu.id +'-collapse'">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            @for (sousMenu of menu.sousMenu; track $index) {
+              <li class="ps-3"><a (click)="navigate(sousMenu.url)" class="link-dark rounded"><i [ngClass]="[sousMenu.icon,'pe-1']"></i>{{sousMenu.titre}}</a></li>
+            }
+          </ul>
+          </div> 
+      </li>
+    }       
+  </ul>
+</div>

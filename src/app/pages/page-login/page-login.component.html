@@ -1,0 +1,22 @@
+<div class="container my-container">
+    <div class="card m-3">
+        <div class="card-header text-center">
+            <h3>Se connecter</h3>
+        </div>
+        <div class="card-body">
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com">
+                <label for="floatingEmail">Email address</label>
+            </div>
+            <div class="form-floating mb-3 password">
+                <input [type]="isShowen? 'text':'password'" class="form-control" id="floatingPassword" placeholder="Password">
+                <i [ngClass]="{'bi':true, 'bi-eye':isShowen, 'bi-eye-slash':!isShowen}" (click)="isShowen=!isShowen"></i>
+                <label for="floatingPassword">Password</label>
+            </div>
+            <div class="login-btn d-flex justify-content-between">
+                <button routerLink='/inscrire' type="button" class="btn btn-link">S'inscrire</button>
+                <button type="button" class="btn btn-primary"><i class="bi bi-check2 pe-2"></i>Se connecter</button>
+            </div>
+        </div>
+    </div>
+</div>
