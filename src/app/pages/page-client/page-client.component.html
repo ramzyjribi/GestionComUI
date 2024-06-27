@@ -1,0 +1,22 @@
+<div class="container-fluid">
+  <div class="m-md-2">
+    <div class= "d-flex justify-content-between">
+      <div><h4>Liste des articles</h4></div>
+      <div>
+        <app-boutons-groupe (clickEvent)="onClick()"></app-boutons-groupe>
+      </div>
+    </div>
+  </div>
+
+  <div class="m-md-4">
+    <app-detail-client-fournisseur
+      *ngFor="let client of clients"
+      [client]="client"></app-detail-client-fournisseur>
+
+
+  </div>
+  <div class="d-flex justify-content-center">
+    <app-pagination></app-pagination>
+  </div>
+</div>
+

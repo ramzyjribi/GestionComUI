@@ -1,0 +1,26 @@
+<div class="row align-items-center">
+
+  <div class="col-md-2">
+    <img [src]= "articleDto.photo" alt="" class="img-thumbnail" style="max-width:150px;">
+  </div>
+
+  <div class="col-md-4 text-start">
+       <div><i class="bi bi-upc-scan me-md-3 text-primary"></i>{{articleDto.codeArticle}}</div>
+       <div><i class="bi bi-info-circle me-md-3 text-danger"></i>{{articleDto.designation}}</div>
+       <div><i class="bi bi-currency-euro me-md-3"></i>{{articleDto.prixUnitaireHt}}&nbsp;HT</div>
+       <div><i class="bi bi-currency-euro me-md-3"></i>{{articleDto.prixUnitaireTtc}}&nbsp;TTC</div>
+  </div>
+
+  <div class="col-md-4 text-center">
+      <h5>Stock actuel</h5>
+      <h5>{{ articleDto.stock}}</h5>
+  </div>
+
+  <div class="col-md-2">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="onClick()">
+      Correction du stock
+    </button>
+  </div>
+
+</div>
+

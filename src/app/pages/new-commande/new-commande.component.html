@@ -1,0 +1,134 @@
+<div class="container-fluid">
+  <h4>Nouvelle commande</h4>
+  <div class="text-end">
+    <button class="btn btn-danger me-2" (click)="reset()">
+      <i class="bi bi-x"></i>&nbsp;
+      Annuler
+    </button>
+    <button class="btn btn-primary me-2" (click)="enregistrer()">
+      <i class="bi bi-floppy"></i>&nbsp;
+      Enregitrer
+    </button>
+  </div>
+  <div class="row border border-4 m-2 p-2">
+    <div class="col-4 border-end">
+      <div class="mb-1">
+         <input type="email" class="form-control"  placeholder="Code commande" [(ngModel)]="codeCommande">
+      </div>
+      <div class="input-group mb-1">
+        <input
+          class="form-control"
+          placeholder="Date Commande"
+          name="dp"
+          [(ngModel)]="modeldate"
+          ngbDatepicker
+          #d="ngbDatepicker"
+        />
+        <button class="btn btn-outline-secondary text-primary bi bi-calendar3" (click)="d.toggle()" type="button"></button>
+      </div>
+      <div class="mb-1">
+        <input
+          id="typeahead-focus"
+          type="text"
+          class="form-control"
+          spellcheck="false"
+          [(ngModel)]="model"
+          [ngbTypeahead]="search"
+          (focus)="focus$.next($any($event).target.value)"
+          (click)="click$.next($any($event).target.value)"
+          (ngModelChange)="Onblur()"
+          #instance="ngbTypeahead"
+        />
+      </div>
+     </div>
+
+    <div class="col-6 text-start border-end">
+      @if (currentClient){
+      <div><i class="bi bi-person-fill me-md-3 text-primary"></i>{{currentClient.nom}}&nbsp;{{ currentClient.prenom }}</div>
+      <div><i class="bi bi-telephone me-md-3 me-md-3"></i>{{ currentClient.tel }}</div>
+      <div><i class="bi bi-envelope me-md-3"></i>{{currentClient.email}}</div>
+        <div><i class="bi bi-house me-md-3"></i>{{currentClient.adresse}},{{ currentClient?.codePostal }} &nbsp; {{currentClient?.ville}}, {{currentClient?.pays}}</div>
+      }
+
+    </div>
+    <div class="col-2 text-center">
+      <img src= "assets\person.png" alt="" class="img-thumbnail" style="width:150px">
+    </div>
+  </div>
+
+  <div class="row border m-2 p-2 align-items-center border-dark-subtle bg-primary-subtle">
+    <div class="col-6">
+      <input
+        id="typeahead-focus2"
+        type="text"
+        placeholder="Recherche Article"
+        class="form-control"
+        spellcheck="false"
+        [(ngModel)]="modelArticle"
+        [ngbTypeahead]="searchArticle"
+        (focus)="focusArticle$.next($any($event).target.value)"
+        (click)="clickArticle$.next($any($event).target.value)"
+        (ngModelChange)="Onblur()"
+        #instancearticle="ngbTypeahead"
+      />
+    </div>
+    <div class="col-2"><input type="number" class="form-control"  placeholder="Quantité" [(ngModel)]="ligneCommande.prixUnitaire"></div>
+    <div class="col-2"><input type="number" class="form-control"  placeholder="Prix" [(ngModel)]="ligneCommande.quantite"></div>
+    <div class="col-2 text-center"><button type="button" class="btn btn-success btn-sm" (click)="addLigneCommade()"><i class="bi bi-plus-lg"></i></button></div>
+  </div>
+  <div class="row border m-2 p-2lp text-center text-primary text-bg-light">
+    <div class="col-md-2 mb-1 mt-1 border-end ">
+      Code Article
+    </div>
+    <div class="col-md-3  mb-1 mt-1 border-end ">
+      Designation
+    </div>
+    <div class="col-md-2 mb-1 mt-1 border-end">
+     Quantité
+    </div>
+    <div class="col-md-2 mb-1 mt-1 border-end">
+      Prix Unitaire
+    </div>
+    <div class="col-md-2 mb-1 mt-1 border-end">
+      Valeur
+    </div>
+  </div>
+  @for(ligneCommande of detailcommande;track ligneCommande.codeArticle){
+    <div class="row border m-2 align-items-center">
+      <div class="col-md-1 text-center border-end">
+        {{ligneCommande.codeArticle}}
+      </div>
+      <div class="col-md-7 text-center border-end">
+        {{ ligneCommande.designation}}
+      </div>
+      <div class="col-md-1 text-center border-end">
+        {{ ligneCommande.quantite }}
+      </div>
+      <div class="col-md-1 text-center border-end">
+        {{ ligneCommande.prixUnitaire }}
+      </div>
+      <div class="col-md-1 border-end text-center">
+        {{ ligneCommande.valeur }}
+      </div>
+      <div class="col-md-1 text-center ">
+        <button type="button" class="btn btn-link text-danger text-decoration-none" (click)="delateLigneArticle(ligneCommande.codeArticle)">
+          <i class="bi bi-trash"></i>
+        </button>
+      </div>
+    </div>
+  }
+  @if (detailcommande.length>0){
+    <div class="text-end text-secondary mt-1">
+      <strong>Valeur totale de la commande: {{ somme }}€</strong>
+    </div>
+  }
+  <div>
+    @if (show) {
+      <ngb-toast header="Commande Crée" [autohide]="false" (hidden)="show = false">
+        Commande N° <a [routerLink]="['/commande',numCommande]">{{numCommande}}</a>
+      </ngb-toast>
+    }
+  </div>
+
+</div>
+

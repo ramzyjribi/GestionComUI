@@ -1,0 +1,38 @@
+<div class="custom-container">
+  <header class="header">
+    <h3>Commande N° : {{commande?.codeCommande}}</h3>
+    <div class="customer-info mt-3">
+      <div class="info-item"><strong>Nom:</strong> {{commande?.nom}}</div>
+      <div class="info-item"><strong>Prénom:</strong> {{ commande?.prenom }}</div>
+      <div class="info-item"><strong>Téléphone:</strong> {{commande?.tel}}</div>
+      <div class="info-item"><strong>Email:</strong> {{ commande?.email }} </div>
+      <div class="info-item"><strong>Adresse:</strong> {{ commande?.adresse }}, {{ commande?.codePostal }} &nbsp; {{commande?.ville}}, {{commande?.pays}}</div>
+      <div class="info-item"><strong> Date: </strong> {{commande?.date.day}} / {{commande?.date.month}} / {{commande?.date.year}}</div>
+    </div>
+  </header>
+  <main class="order-details">
+    <table>
+      <thead>
+      <tr>
+        <th>Article</th>
+        <th>Prix</th>
+        <th>Quantité</th>
+        <th>Montant</th>
+      </tr>
+      </thead>
+      <tbody>
+        @for (ligne of commande?.articles;track ligne.codeArticle){
+      <tr>
+        <td>{{ ligne.codeArticle }} - {{ligne.designation}}</td>
+        <td>{{ ligne.prixUnitaire }}€</td>
+        <td>{{ ligne.quantite }}</td>
+        <td>{{ ligne.valeur }}€</td>
+      </tr>
+        }
+    </tbody>
+    </table>
+    <div class="total">
+      <strong>Valeur totale de la commande: {{ commande?.total }}€</strong>
+    </div>
+  </main>
+</div>

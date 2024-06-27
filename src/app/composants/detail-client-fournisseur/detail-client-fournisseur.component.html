@@ -1,0 +1,39 @@
+<div class="row m-2 p-2 border-bottom">
+  <!--image article-->
+  <div class="col-2 d-none d-lg-block">
+    <img src= "" alt="" class="img-thumbnail" style="max-width:150px;">
+  </div>
+  <!--detail article-->
+  <div class="col-4 ">
+    <div><i class="bi bi-upc-scan me-md-3 text-primary"></i>{{client.prenom}}</div>
+    <div><i class="bi bi-info-circle me-md-3 text-danger"></i>{{client.nom}}</div>
+    <div><i class="bi bi-currency-euro me-md-3"></i>{{client.email}}&nbsp;HT</div>
+    <div><i class="bi bi-currency-euro me-md-3"></i>{{client.tel}}&nbsp;TTC</div>
+  </div>
+  <!--detail categorie-->
+  <div class="col-3 ">
+    <div><i class="bi bi-upc me-md-3 text-primary"></i>{{client.adresse}}</div>
+    <div><i class="bi bi-tag me-md-3 text-danger"></i>{{client.ville +"  " + client.codePostal}}</div>
+  </div>
+  <div class="col-3 align-content-center">
+    <div class="row">
+      <div class="col-lg-4 align-content-center">
+        <button type="button" class="btn btn-light text-decoration-none" (click)="modifierClient()">
+          <i class="bi bi-pencil"></i>
+        </button>
+      </div>
+      <div class="col-lg-4 align-content-center">
+        <button type="button" class="btn btn-light text-danger text-decoration-none">
+          <i class="bi bi-trash"></i>
+        </button>
+      </div>
+      <div class="col-lg-4 align-content-center">
+        <button type="button" class="btn btn-light text-decoration-none text-success">
+          <i class="bi bi-list-task"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+</div>
+

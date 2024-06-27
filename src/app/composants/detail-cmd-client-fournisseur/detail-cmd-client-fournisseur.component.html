@@ -1,0 +1,32 @@
+<div class="row align-items-center">
+
+  <div class="col-md-2">
+    <img src= "assets\person.png" alt="" class="img-thumbnail" style="max-width:150px;">
+  </div>
+
+  <div class="col-md-4 text-start">
+
+    <div><i class="bi bi bi-person-fill me-md-3 text-primary"></i>{{commande.nom}}&nbsp; {{ commande?.prenom }}</div>
+    <div><i class="bi bi bi-telephone me-md-3 text-danger"></i>{{commande?.tel}}</div>
+    <div><i class="bi bi-envelope me-md-3"></i>{{ commande?.email }}</div>
+    <div><i class="bi bi-house me-md-3"></i>{{ commande?.adresse }}, {{ commande?.codePostal }} &nbsp; {{commande?.ville}}, {{commande?.pays}}</div>
+  </div>
+
+  <div class="col-md-4 text-start">
+    <div><i class="bi bi-upc-scan me-md-3 text-primary"></i>{{commande?.codeCommande}}</div>
+    <div><i class="bi bi-calendar2-date me-md-3 text-danger"></i>{{ commande?.date }}</div>
+    <div><i class="bi bi bi-cash me-md-3"></i>{{commande.total}}€</div>
+  </div>
+
+  <div class="col-md-2 text-center">
+    <button type="button" class="btn btn-light text-decoration-none">
+      <i class="bi bi-pencil"></i>
+    </button>
+    <button type="button" class="btn btn-light text-danger text-decoration-none">
+      <i class="bi bi-trash"></i>
+    </button>
+  </div>
+
+</div>
+
+
