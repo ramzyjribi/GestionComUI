@@ -12,11 +12,19 @@ export const commandeDB : Commande[] = [
   ]
   },
   {codeCommande:"CMD102" ,date :"22/6/2024","prenom":"Willi","nom":"Jeary","email":"wjearyd@blinklist.com","tel":"7536621896",
-    "adresse":"84885 Holy Cross Circle","codePostal":null,"ville":"Muara Siberut",total :3360,
+    "adresse":"84885 Holy Cross Circle","codePostal":"69006","ville":"Muara Siberut",total :3360,
     articles : [
       { codeArticle:'DOMINOS',designation:'Tapis de course T520B Confort, 13 km/h, 43x121cm' ,quantite : 18 ,prixUnitaire : 120 , valeur : 2160},
       { codeArticle:'SEGWAY',designation:'Trottinette électrique Ninebot F2 Plus' ,quantite : 5 ,prixUnitaire : 80 , valeur : 400  },
       { codeArticle:'WISPEED',designation:'Trottinette électrique Enfant Wispeed T650 Navy Blue' ,quantite : 8 ,prixUnitaire : 100 , valeur : 800  },
+    ]
+  },
+  {codeCommande:"CMD104" ,date :"18/01/2024","prenom":"Joni","nom":"Fynn","email":"jfynni@arizona.edu","tel":"4679399090","adresse":"80913 Alpine Street","codePostal":"69004",
+    "ville":"Xinyang",total :450,
+    articles : [
+      { codeArticle:'DOMINOS',designation:'Tapis de course T520B Confort, 13 km/h, 43x121cm' ,quantite : 20 ,prixUnitaire : 10 , valeur : 200},
+      { codeArticle:'SEGWAY',designation:'Trottinette électrique Ninebot F2 Plus' ,quantite : 5 ,prixUnitaire : 10 , valeur : 50  },
+      { codeArticle:'WISPEED',designation:'Trottinette électrique Enfant Wispeed T650 Navy Blue' ,quantite : 2 ,prixUnitaire : 100 , valeur : 200  },
     ]
   }
 

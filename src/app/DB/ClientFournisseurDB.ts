@@ -1,6 +1,8 @@
 import {ClientFournisseur} from "../models/ClientFournisseur";
 
-export const clientFournisseurDB : ClientFournisseur[] = [{"id":1,"prenom":"Marne","nom":"Abbotts","email":"mabbotts0@google.com","tel":"6905599656","adresse":"0 Meadow Ridge Point","codePostal":"12021","ville":"La Reforma"},
+export const clientFournisseurDB : ClientFournisseur[] = [
+  {"id":51,"prenom":"Jean","nom":"Dupont","email":"jean.dupont@example.com","tel":"0123456789","adresse":"123 Rue de Paris","codePostal":"75001","ville":"Paris"},
+  {"id":1,"prenom":"Marne","nom":"Abbotts","email":"mabbotts0@google.com","tel":"6905599656","adresse":"0 Meadow Ridge Point","codePostal":"12021","ville":"La Reforma"},
   {"id":2,"prenom":"Milo","nom":"Etock","email":"metock1@t.co","tel":"6982887454","adresse":"34 Autumn Leaf Avenue","codePostal":null,"ville":"Al Jamīmah"},
   {"id":3,"prenom":"Avril","nom":"Robecon","email":"arobecon2@fc2.com","tel":"7835264096","adresse":"3 Stephen Lane","codePostal":"55530","ville":"Yeşilköy"},
   {"id":4,"prenom":"Grant","nom":"Dwyer","email":"gdwyer3@tamu.edu","tel":"4222808208","adresse":"91408 Petterle Center","codePostal":"396456","ville":"Pavlovsk"},

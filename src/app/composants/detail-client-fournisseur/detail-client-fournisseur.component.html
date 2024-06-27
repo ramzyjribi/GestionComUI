@@ -1,19 +1,19 @@
 <div class="row m-2 p-2 border-bottom">
   <!--image article-->
   <div class="col-2 d-none d-lg-block">
-    <img src= "" alt="" class="img-thumbnail" style="max-width:150px;">
+    <img src= "assets\person.png" alt="" class="img-thumbnail" style="max-width:150px;">
   </div>
   <!--detail article-->
   <div class="col-4 ">
-    <div><i class="bi bi-upc-scan me-md-3 text-primary"></i>{{client.prenom}}</div>
-    <div><i class="bi bi-info-circle me-md-3 text-danger"></i>{{client.nom}}</div>
-    <div><i class="bi bi-currency-euro me-md-3"></i>{{client.email}}&nbsp;HT</div>
-    <div><i class="bi bi-currency-euro me-md-3"></i>{{client.tel}}&nbsp;TTC</div>
+    <div><i class="bi-person-fill me-md-3 text-primary"></i>{{client.prenom}}</div>
+    <div><i class="bi-person-fill me-md-3 text-danger"></i>{{client.nom}}</div>
+    <div><i class="bi bi-envelope me-md-3"></i>{{client.email}}&nbsp;HT</div>
+    <div><i class="bi bi-telephone me-md-3"></i>{{client.tel}}&nbsp;TTC</div>
   </div>
   <!--detail categorie-->
   <div class="col-3 ">
-    <div><i class="bi bi-upc me-md-3 text-primary"></i>{{client.adresse}}</div>
-    <div><i class="bi bi-tag me-md-3 text-danger"></i>{{client.ville +"  " + client.codePostal}}</div>
+    <div><i class="bi bi-house me-md-3 text-primary"></i>{{client.adresse}}</div>
+    <div><i class="bi bi-house me-md-3 text-danger"></i>{{client.ville +"  " + client.codePostal}}</div>
   </div>
   <div class="col-3 align-content-center">
     <div class="row">
